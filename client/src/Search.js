@@ -16,12 +16,13 @@ handleZipChange = (e) => {
 handleSearch = (e) => {
 	e.preventDefault();
 	console.log("Zip was submitted!", this.state);
-	axios.post('./Profile', this.state)
-	.then(result => {
-		console.log('Success!', result);
+	axios.get('/getusersnearby', {zip: 98101})
+	.then(res => {
+		const results = res.data;
+		console.log('results from axios call', res.data);
 	})
 	.catch(err => {
-			console.log('ERROR', err);
+		console.log('ERROR', err);
 	});
 }
 
