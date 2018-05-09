@@ -8,7 +8,8 @@ class Signup extends Component {
 		this.state = {
 			name: '',
 			email: '',
-			password: ''
+			password: '',
+			zipcode: ''
 		};
 	}
 
@@ -22,6 +23,10 @@ class Signup extends Component {
 	
 	handlePasswordChange = (e) => {
 		this.setState({ password: e.target.value });
+	}
+
+	handleZipCodeChange = (e) => {
+		this.setState({ zipcode: e.target.value });
 	}
 
 
@@ -56,8 +61,13 @@ class Signup extends Component {
 						<input name = "Email" placeholder = "What is your email?" value = {this.state.email} onChange = {this.handleEmailChange} />
 					</div>
 					<div>
-						<input name = "Password" type = "password" value = {this.state.password} onChange = {this.handlePasswordChange} />
+						<input name = "Password" placeholder = "Type a password" type = "password" value = {this.state.password} onChange = {this.handlePasswordChange} />
 					</div>
+					<div>
+						<input name = "ZipCode" placeholder = "What's your zipcode?" value = {this.state.zipcode}
+							onChange = {this.handleZipCodeChange} />
+					</div>
+
 					<input type = "submit" value = "Sign Me Up!" className = "button" />
 				</form>
 			</div>

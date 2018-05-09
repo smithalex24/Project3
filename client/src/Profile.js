@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Search from './Search.js';
 
 class Profile extends Component {
 	render() {
@@ -7,6 +8,7 @@ class Profile extends Component {
 				<div>
 					<h1>Hello again, {this.props.user.name}!</h1>
 					<h3>Your email is {this.props.user.email}</h3>
+					<Search />
 				</div>
 			);
 		}
