@@ -7,9 +7,12 @@ var mentorSchema = new mongoose.Schema({
 		reference: 'User',
 		required: true
 	},
-	areas: [areaSchema],
-	zipcode: Number
+	field: [{
+		category: String,
+		subcategory: String
+	}]
 });
 
-var mentor = mongoose.model('mentor', mentorSchema);
-module.exports = mentor
+var Mentor = mongoose.model('Mentor', mentorSchema);
+
+module.exports = Mentor
