@@ -30,7 +30,6 @@ router.post('/create', function(req, res) {
 	console.log(req.body);
 	let createData = {
 		userId: req.body.userId,
-	    field: req.body.field,
 	    experience: req.body.experience,
 	    description: req.body.description
 	}
