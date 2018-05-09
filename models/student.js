@@ -8,10 +8,13 @@ var Schema = mongoose.Schema;
   		reference: 'User',
   		required: true
   	},
-  	areas: Array,
-    zipcode: Number
+    description: {
+      type: String,
+      required: true
+    },
+    experience: String
   });
 
-  var studentSchema = mongoose.model('student', studentSchema);
+  var Student = mongoose.model('Student', studentSchema);
   
-  module.exports = student;
+  module.exports = Student;
