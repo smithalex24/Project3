@@ -20,11 +20,18 @@ var userSchema = new mongoose.Schema({
     required: true,
     minlength: 6,
     maxlength: 99
+  },
+  zipcode: {
+    type: Number,
+    required: true
   }
+<<<<<<< HEAD
    zipcode: {
     type: Number,
     required: true
   },
+=======
+>>>>>>> f65ff296b1b0619ba4a1b72823cfa14849bc2230
   
 });
 
@@ -34,7 +41,8 @@ userSchema.set('toJSON', {
     var returnJson = {
       id: user._id,
       email: user.email,
-      name: user.name
+      name: user.name,
+      zipcode: user.zipcode
     };
     return returnJson;
   }
