@@ -4,6 +4,8 @@ import MentorForm from './MentorForm';
 import { Redirect } from 'react-router-dom';
 import Search from './Search.js';
 import Home from './Home.js';
+import SearchMentor from './SearchMentor.js';
+import { Link } from 'react-router-dom';
 
 class Profile extends Component {
 	
@@ -14,7 +16,6 @@ class Profile extends Component {
 					<h1>Hello again, {this.props.user.name}!</h1>
 					<h3>Your email is {this.props.user.email}</h3>
 					<MentorForm />
-					<Search />
 				</div>
 			);
 		}
@@ -25,12 +26,13 @@ class Profile extends Component {
 					<h1>Hello again, {this.props.user.name}!</h1>
 					<h3>Your email is {this.props.user.email}</h3>
 					<StudentForm user={this.props.user}/>
+					<Link to = "/search"> Find a Mentor</Link>
 				</div>
 			)
 		} else {
 			 return(
-           		 <Redirect to = "/" />);
-            	
+           		 <Redirect to = "/" />
+           		 );
 		}		
 	}
 }

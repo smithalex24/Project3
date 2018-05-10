@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Search from './Search';
 
 class MentorForm extends Component {
 	constructor(props) {
@@ -34,7 +35,9 @@ class MentorForm extends Component {
 					</div>
 					<input type = "submit" value = "Submit" className = "button" />
 				</form>
+				<Search />
 			</div>
+
 	
 	
 		);

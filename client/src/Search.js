@@ -5,7 +5,14 @@ class Search extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			zipcode: ''
+			zipcode: '',
+			results: [
+			{
+				name: '',
+				email: '',
+				zipcode: ''
+			}
+			]
 		};
 	}
 
@@ -19,6 +26,7 @@ handleSearch = (e) => {
 	axios.post('/getusersnearby', {zipcode: this.state.zipcode})
 	.then(res => {
 		const results = res.data;
+		console.log(results)
 		console.log('results from axios call', res.data);
 	})
 	.catch(err => {
@@ -31,7 +39,6 @@ handleSearch = (e) => {
 	
 		return (
 			<div>
-				<h2>Find Connections Nearby</h2>
 				<form onSubmit = {this.handleSearch}>
 					<div>
 						<input name = "Zipcode" placeholder = "What is your Zipcode?" value = {this.state.zipcode} onChange = {this.handleZipChange} />
