@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-areaSchema = require('./area.js');
 
 var mentorSchema = new mongoose.Schema({
 	userId: {
@@ -10,7 +9,8 @@ var mentorSchema = new mongoose.Schema({
 	field: [{
 		category: String,
 		subcategory: String
-	}]
+	}],
+	experience: String
 });
 
 var Mentor = mongoose.model('Mentor', mentorSchema);

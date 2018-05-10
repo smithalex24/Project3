@@ -8,10 +8,6 @@ var Schema = mongoose.Schema;
   		reference: 'User',
   		required: true
   	},
-    field: [{
-      category: String,
-      subcategory: String
-    }],
     description: {
       type: String,
       required: true

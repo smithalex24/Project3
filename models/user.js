@@ -18,20 +18,10 @@ var userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    minlength: 6,
+    minlength: 3,
     maxlength: 99
-  },
-  zipcode: {
-    type: Number,
-    required: true
-  }
-<<<<<<< HEAD
-   zipcode: {
-    type: Number,
-    required: true
-  },
-=======
->>>>>>> f65ff296b1b0619ba4a1b72823cfa14849bc2230
+  }, 
+  mentor: Boolean
   
 });
 
@@ -42,7 +32,7 @@ userSchema.set('toJSON', {
       id: user._id,
       email: user.email,
       name: user.name,
-      zipcode: user.zipcode
+      mentor: user.mentor
     };
     return returnJson;
   }
@@ -52,7 +42,6 @@ userSchema.methods.authenticated = function(password, callback) {
   return bcrypt.compareSync(password, this.password);
 }
   
-
 // Mongoose's version of a beforeCreate hook
 userSchema.pre('save', function(next) {
   var hash = bcrypt.hashSync(this.password, 10);
