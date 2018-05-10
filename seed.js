@@ -1,3 +1,4 @@
+
 var db = require("./models");
 
 var studentList = [
@@ -28,6 +29,7 @@ var studentList = [
       description: "I am a college student interested in field of dance.",
       experience: "I teach dance."
   }
+  
  ]
 
 db.Student.remove({}, function(err, students){

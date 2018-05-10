@@ -10,6 +10,7 @@ import Nav from './layout/Nav';
 import Profile from './Profile';
 import Signup from './auth/Signup';
 
+
 class App extends Component {
   constructor(){
     super();
@@ -40,7 +41,7 @@ class App extends Component {
       })
       .catch(err => {
         console.log('ERROR', err);
-        console.log('response', err.response);
+        console.log('response', err);
         localStorage.removeItem('mernToken');
         this.setState({
           user: null

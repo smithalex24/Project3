@@ -56,7 +56,7 @@ router.post('/signup', function(req, res) {
   				expiresIn: 60 * 60 * 24 //Expires in 24 hours, in seconds
   			});
 
-  			res.send({ user: createdUser, token: token })
+  			res.status(200).send({ user: createdUser, token: token })
   		})
   		.catch(function(err) {
   			console.log('err', err);

@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-areaSchema = require('./area.js');
 
 var mentorSchema = new mongoose.Schema({
 	userId: {
@@ -7,13 +6,4 @@ var mentorSchema = new mongoose.Schema({
 		reference: 'User',
 		required: true
 	},
-	field: [{
-		category: String,
-		subcategory: String
-	}],
-	experience: String
-});
 
-var Mentor = mongoose.model('Mentor', mentorSchema);
-
-module.exports = Mentor

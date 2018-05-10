@@ -4,14 +4,15 @@ nav {
   padding: 10px 0; 
 }
 nav a {
-  margin: 10px;
+  margin: 20px;
   text-decoration: none;
   font-size: 20px;
-  color: chartreuse;
+  color: white;
+  font-family: 'Abril Fatface'
 }
 
 nav a:hover {
-  color: hotpink;
+  color: black;
 }
 .footer {
   background-color: #555;
@@ -23,33 +24,39 @@ nav a:hover {
 .footer-text {
   color: white;
   font-size: 15px;
+  font-family: 'Abril Fatface';
 }
 
 .App {
   text-align: center;
 }
-
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 80%;
+  width: 80%;
 }
+
 
 .App-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
+  font-family: 'Abril Fatface';
 }
 
 .App-title {
   font-size: 1.5em;
+  font-family: 'Abril Fatface';
 }
 
 .App-intro {
   font-size: large;
+  font-family: 'Abril Fatface';
+}
+.hometext {
+  font-family: 'Abril Fatface';
+  font-size: 25px;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+

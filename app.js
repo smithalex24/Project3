@@ -8,6 +8,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 var path = require('path');
 var app = express();
+mongoose.Promise = global.Promise;
 
 // Mongoose connect
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mernauth', {useMongoClient: true});
@@ -19,13 +20,12 @@ app.use(bodyParser.json({limit: "50mb"}));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.resolve(__dirname, 'client', 'build')));
 
-app.use(function(req, res, next) {
-  // before every route, attach the flash messages and current user to res.locals
-  res.locals.currentUser = req.user;
-  next();
-});
 
 // Controllers
+app.use('/', require('./routes/search'));
+
+app.use('/profile', require('./routes/profile'));
+app.use('/student', require('./routes/student'));
 app.use('/auth', expressJWT({ 
 	secret: process.env.JWT_SECRET,
 	getToken: function fromRequest(req) {
@@ -45,4 +45,4 @@ app.get('*', function(req, res, next) {
 	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
 
-module.exports = app;
+app.listen(process.env.PORT || 3001);
