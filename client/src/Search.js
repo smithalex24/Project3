@@ -31,7 +31,7 @@ handleSearch = (e) => {
 	
 		return (
 			<div>
-				<h2>Search for nearby Mentors</h2>
+				<h2>Find Connections Nearby</h2>
 				<form onSubmit = {this.handleSearch}>
 					<div>
 						<input name = "Zipcode" placeholder = "What is your Zipcode?" value = {this.state.zipcode} onChange = {this.handleZipChange} />

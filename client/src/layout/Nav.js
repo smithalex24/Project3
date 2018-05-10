@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 
+
 class Nav extends Component {
 	handleLogout = (e) => {
 		console.log('Logging out...');
@@ -15,7 +16,7 @@ class Nav extends Component {
 			links = (
 				<span>
 					<a onClick = {this.handleLogout}>Logout</a>
-					<Link to = "/profile"> Profile</Link>
+					<Link to = "/Profile"> Profile</Link>
 				</span>
 
 			);

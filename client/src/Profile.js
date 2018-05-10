@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-
-// import Search from './Search.js';
 import StudentForm from './StudentForm';
 import MentorForm from './MentorForm';
+import { Redirect } from 'react-router-dom';
 import Search from './Search.js';
+import Home from './Home.js';
 
 class Profile extends Component {
 	
@@ -27,6 +27,10 @@ class Profile extends Component {
 					<StudentForm user={this.props.user}/>
 				</div>
 			)
+		} else {
+			 return(
+           		 <Redirect to = "/" />);
+            	
 		}		
 	}
 }

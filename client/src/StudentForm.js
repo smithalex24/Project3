@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import Search from './Search';
 
 class StudentForm extends Component {
 	constructor(props) {
@@ -43,6 +44,7 @@ class StudentForm extends Component {
 					</div>
 					<input type = "submit" value = "Submit" className = "button" />
 				</form>
+				<Search />
 			</div>
 	
 	

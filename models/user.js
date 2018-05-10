@@ -21,15 +21,16 @@ var userSchema = new mongoose.Schema({
     minlength: 3,
     maxlength: 99
   }, 
-  mentor: Boolean
-  },
+  mentor: Boolean,
   zipcode: {
     type: Number,
     required: true
   }
 
-  
 });
+
+  
+
 
 // Override 'toJSON' to prevent the password from being returned with the user
 userSchema.set('toJSON', {

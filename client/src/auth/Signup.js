@@ -9,7 +9,7 @@ class Signup extends Component {
 			name: '',
 			email: '',
 			password: '',
-			mentor: ''
+			mentor: '',
 			zipcode: ''
 		};
 	}
