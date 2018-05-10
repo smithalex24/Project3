@@ -18,8 +18,10 @@ var userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    minlength: 6,
+    minlength: 3,
     maxlength: 99
+  }, 
+  mentor: Boolean
   },
   zipcode: {
     type: Number,
@@ -46,7 +48,6 @@ userSchema.methods.authenticated = function(password, callback) {
   return bcrypt.compareSync(password, this.password);
 }
   
-
 // Mongoose's version of a beforeCreate hook
 userSchema.pre('save', function(next) {
   var hash = bcrypt.hashSync(this.password, 10);

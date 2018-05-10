@@ -41,7 +41,7 @@ class App extends Component {
       })
       .catch(err => {
         console.log('ERROR', err);
-        console.log('response', err.response);
+        console.log('response', err);
         localStorage.removeItem('mernToken');
         this.setState({
           user: null

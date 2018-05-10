@@ -10,7 +10,14 @@ var newLocation;
 var ZIP_API_KEY = process.env.ZIP_API_KEY;
 //APIs
 
-router.post('/getusersnearby', function(req, res){
+// router.get('/getusersnearby', function(req, res){
+// 	console.log('in getusersnearby route with this data:', req.body);
+// 	request(`https://www.zipcodeapi.com/rest/${ZIP_API_KEY}/info.json/${userLocation}/degrees`, function(err, resp, body){
+// 		console.log('request was made');
+// 		console.log('err', err)
+// 		console.log('body', body)
+
+ router.post('/getusersnearby', function(req, res){
 	console.log('in getusersnearby route with this data:', req.body);
 	var zipcode = req.body.zipcode;
 	console.log(zipcode);
@@ -32,6 +39,8 @@ router.post('/getusersnearby', function(req, res){
 		//In the DB promise,  but the res.send, but with the list of users
 		res.send('temporary stub');
 	})
+
+});
 
 
 

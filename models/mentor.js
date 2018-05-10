@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-areaSchema = require('./area.js');
 
 var mentorSchema = new mongoose.Schema({
 	userId: {

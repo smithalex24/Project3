@@ -9,6 +9,7 @@ class Signup extends Component {
 			name: '',
 			email: '',
 			password: '',
+			mentor: ''
 			zipcode: ''
 		};
 	}
@@ -27,7 +28,21 @@ class Signup extends Component {
 
 	handleZipCodeChange = (e) => {
 		this.setState({ zipcode: e.target.value });
-	}
+  }
+
+	handleMentorChange = (event) => {
+		if (event.currentTarget.value === 'true'){
+		    this.setState({
+		      mentor: true
+		    })
+			
+		}
+		else if (event.currentTarget.value === 'false') {
+			this.setState({
+				mentor: false
+			})
+		}
+  	};
 
 
 	handleSubmit = (e) => {
@@ -46,6 +61,7 @@ class Signup extends Component {
 	}
 
 
+
 	render() {
 		if(this.props.user) {
 			return (<Redirect to = "/profile" />);
@@ -62,6 +78,18 @@ class Signup extends Component {
 					</div>
 					<div>
 						<input name = "Password" placeholder = "Type a password" type = "password" value = {this.state.password} onChange = {this.handlePasswordChange} />
+					</div>
+					<div className="radio-row">
+						<div className="input-row">
+							<input id="Mentor" name = "Mentor" type= "radio" value = 'true' checked={this.state.mentor === true ? 'checked' : null}
+							onChange = {this.handleMentorChange} />
+							<label htmlFor="Mentor">Mentor</label>
+						</div>
+						<div className="input-row">
+							<input id="Student" name = "Student" type= "radio" value = 'false' checked={this.state.mentor === false ? 'checked': null}
+							onChange = {this.handleMentorChange}/>
+							<label htmlFor="Student">Student</label>
+						</div>
 					</div>
 					<div>
 						<input name = "ZipCode" placeholder = "What's your zipcode?" value = {this.state.zipcode}

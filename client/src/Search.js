@@ -48,3 +48,4 @@ handleSearch = (e) => {
 }
 
 export default Search;
+
