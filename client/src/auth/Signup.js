@@ -10,6 +10,7 @@ class Signup extends Component {
 			email: '',
 			password: '',
 			mentor: ''
+			zipcode: ''
 		};
 	}
 
@@ -25,9 +26,9 @@ class Signup extends Component {
 		this.setState({ password: e.target.value });
 	}
 
-	// handleZipCodeChange = (e) => {
-	// 	this.setState({ zipcode: e.target.value });
-	// }
+	handleZipCodeChange = (e) => {
+		this.setState({ zipcode: e.target.value });
+  }
 
 	handleMentorChange = (event) => {
 		if (event.currentTarget.value === 'true'){
@@ -42,6 +43,7 @@ class Signup extends Component {
 			})
 		}
   	};
+
 
 	handleSubmit = (e) => {
 		e.preventDefault();
@@ -89,6 +91,11 @@ class Signup extends Component {
 							<label htmlFor="Student">Student</label>
 						</div>
 					</div>
+					<div>
+						<input name = "ZipCode" placeholder = "What's your zipcode?" value = {this.state.zipcode}
+							onChange = {this.handleZipCodeChange} />
+					</div>
+
 					<input type = "submit" value = "Sign Me Up!" className = "button" />
 				</form>
 			</div>

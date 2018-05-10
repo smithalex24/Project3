@@ -22,6 +22,12 @@ var userSchema = new mongoose.Schema({
     maxlength: 99
   }, 
   mentor: Boolean
+  },
+  zipcode: {
+    type: Number,
+    required: true
+  }
+
   
 });
 
@@ -32,7 +38,7 @@ userSchema.set('toJSON', {
       id: user._id,
       email: user.email,
       name: user.name,
-      mentor: user.mentor
+
     };
     return returnJson;
   }
