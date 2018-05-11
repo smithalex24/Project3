@@ -69,10 +69,7 @@ if (this.props.user) {
 		});
 	}
 
-  	}
   }
-}
-
 
 
 
@@ -83,17 +80,12 @@ if (this.props.user) {
 				<div>
 					<h1>Hello again, {this.props.user.name}!</h1>
 					<h3>Your email is {this.props.user.email}</h3>
-
 					<MentorForm user={this.props.user} formSubmit={this.formSubmit} />
 					<p>{this.state.field}</p>
-
 					<MentorForm user={this.props.user}/>
-
 				</div>
 			);
-		}
-
-		else if (this.props.user && !this.props.user.mentor) {
+		} else if (this.props.user && !this.props.user.mentor) {
 			return (
 				<div>
 					<h1>Hello again, {this.props.user.name}!</h1>
@@ -108,7 +100,9 @@ if (this.props.user) {
            		 );
 		}		
 	}
+
 }
+
 
 
 export default Profile;

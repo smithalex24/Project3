@@ -40,11 +40,9 @@ render() {
 					<input type = "submit" value = "Submit" className = "button" />
 				</form>
 
-=======
+
 	handleSubmit = (e) => {
 		e.preventDefault()
-		console.log("Mentor form created!", this.state)
-		console.log('user is', this.props.user);
 		axios.post('http://localhost:3001/mentor', {
 			userId: this.props.user.id, 
 			field: this.state.field,
@@ -57,17 +55,6 @@ render() {
 			console.log('ERROR', err)
 		});
 	}
-
-
-	render() {
-		const { field } = this.state
-		const value = field && field.value
-		console.log("this is the field...")
-		console.log(field)
-		console.log("this is the field value...")
-		console.log(field.value)
-		console.log("this is the field value...")
-		console.log(field.value)
 		
 		return (
 			<div>
@@ -82,8 +69,11 @@ render() {
 			</div>
 
 		);
+
 	}
+	);
 }
+
 
 export default MentorForm;
 

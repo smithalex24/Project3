@@ -41,10 +41,6 @@ handleSearch = (e) => {
 
 
 	render() {
-
-
-	
-
 		const results = this.state.results.map(person => {
 			if(person && person.name){
 				return (
