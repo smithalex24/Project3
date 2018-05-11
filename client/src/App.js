@@ -9,6 +9,8 @@ import Login from './auth/Login';
 import Nav from './layout/Nav';
 import Profile from './Profile';
 import Signup from './auth/Signup';
+import SearchMentor from './SearchMentor';
+
 
 class App extends Component {
   constructor(){
@@ -29,7 +31,7 @@ class App extends Component {
     if(token){
       console.log('token found in LS', token);
       // There is a token in local storage. Try to validate it 
-      axios.post('/auth/me/from/token', {
+      axios.post('http://localhost:3001/auth/me/from/token', {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       .then(response => {
@@ -57,6 +59,8 @@ class App extends Component {
   }
 
   render() {
+    console.log("THIS IS THE USER")
+    console.log(this.state.user)
     return (
       <div className="App">
         <Router>
@@ -71,6 +75,8 @@ class App extends Component {
             } />
             <Route path = "/profile" component = {
               () => (<Profile user={this.state.user} />)
+            } />
+            <Route path = "/search" component = { () => (<SearchMentor  />)
             } />
           </div>
         </Router>

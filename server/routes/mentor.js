@@ -6,23 +6,11 @@ var User = require('../models/user');
 var bcrypt = require('bcrypt');
 var expressJWT = require('express-jwt');
 var jwt = require('jsonwebtoken');
-var db = require ('../models/student')
-
-//set up student profile route
-router.get('/', function(req, res) {
-	db.Student.find({'userId': req.user.id}, function(err, Student) {
-		if(err) {
-			console.log(err);
-		}
-		else {
-			res.render('student', {Student})
-		}
-	})
-});
+var Mentor = require ('../models/mentor');
 
 //find specific user id
 router.get('/:id', (req, res) => {
-  db.Student.findOne({_id:req.params.id}).then(data =>{
+  Mentor.findOne({_id:req.params.id}).then(data =>{
     res.send(data)
   })
 })
@@ -30,17 +18,17 @@ router.get('/:id', (req, res) => {
 //create student info
 router.post('/', function(req, res) {
 	console.log(req.body);
-	let createData = {
+	let createMentor = {
 		userId: req.body.userId,
-	    description: req.body.description,
-	    experience: req.body.experience,
+	    field: req.body.field,
+	    experience: req.body.experience
 	}
-	Student.create(createData, function(err) {
+	Mentor.create(createMentor, function(err, mentor) {
 		if(err) {
 			console.log(err);
 		}
-	})
- 	res.send();
+		res.send(mentor);
+	});
 });
 
 module.exports = router;

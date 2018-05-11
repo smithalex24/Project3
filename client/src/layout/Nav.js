@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../logo.svg';
+
+
 
 class Nav extends Component {
 	handleLogout = (e) => {
@@ -15,7 +16,7 @@ class Nav extends Component {
 			links = (
 				<span>
 					<a onClick = {this.handleLogout}>Logout</a>
-					<Link to = "/profile"> Profile</Link>
+					<Link to = "/Profile"> Profile</Link>
 				</span>
 
 			);
@@ -37,8 +38,7 @@ class Nav extends Component {
 					{links}
 				</nav>
 				<header className="App-header">
-          			<img src={logo} className="App-logo" alt="logo" />
-          			<h1 className="App-title">Welcome to React</h1>
+          			<h1 className="App-title">Welcome to MentorED!</h1>
         		</header>
 			</div>
 	

@@ -26,7 +26,9 @@ var userSchema = new mongoose.Schema({
     required: true
   },
   mentor: Boolean
+
 });
+
 
 // Override 'toJSON' to prevent the password from being returned with the user
 userSchema.set('toJSON', {
@@ -37,8 +39,7 @@ userSchema.set('toJSON', {
       name: user.name,
       zipcode: user.zipcode,
       mentor: user.mentor
-
-    };
+  };
     return returnJson;
   }
 });

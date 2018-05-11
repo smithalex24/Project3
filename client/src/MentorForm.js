@@ -1,44 +1,43 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
+import Search from './Search';
+
 
 class MentorForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			field: '',
-			description: ''
+			field: [],
+			experience: ''
 		};
 	}
 	
-	fieldChange = (e) => {
-		this.setState({ experience: e.target.value });
+	fieldChange = (field) => {
+		this.setState({ field });
 	}
 	
-	descriptionChange = (e) => {
-		this.setState({ description: e.target.value });
+	experienceChange = (e) => {
+		this.setState({ experience: e.target.value });
 	}
 
-	handleSubmit = (e) => {
-		e.preventDefault();
-		console.log("Mentor form created!", this.state);
-	}
+render() {
 
-	render() {
 		return (
 			<div>
-				<form onSubmit = {this.handleSubmit}>
+				<form onSubmit = {this.props.formSubmit}>	
 					<div>
-						<input name = "Field" placeholder = "Write your field of expertise" value = {this.state.field} onChange = {this.fieldChange} />
-					</div>
-					<div>
-						<input name = "Description" value = {this.state.description} onChange = {this.descriptionChange} />
+						<input name = "Experience" placeholder= "Enter short bio here" value = {this.state.experience} onChange = {this.experienceChange} />
 					</div>
 					<input type = "submit" value = "Submit" className = "button" />
 				</form>
+
 			</div>
-	
-	
+
 		);
 	}
 }
 
 export default MentorForm;
+

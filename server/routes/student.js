@@ -1,4 +1,3 @@
-require('dotenv').config();
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
@@ -6,35 +5,36 @@ var User = require('../models/user');
 var bcrypt = require('bcrypt');
 var expressJWT = require('express-jwt');
 var jwt = require('jsonwebtoken');
-var db = require ('../models/mentor')
+var Student = require ('../models/student')
 
 //set up student profile route
-router.get('/mentor', is LoggedIn, function(req, res) {
-	db.Mentor.find({'userId': req.user.id}, function(err, Mentor) {
+router.get('/', function(req, res) {
+	Student.find({'userId': req.user.id}, function(err, Student) {
 		if(err) {
 			console.log(err);
 		}
 		else {
-			res.render('mentor', { Mentor })
+			res.render('student', {Student})
 		}
 	})
 });
+
 //find specific user id
 router.get('/:id', (req, res) => {
-  db.Mentor.findOne({_id:req.params.id}).then(data =>{
+  Student.findOne({_id:req.params.id}).then(data =>{
     res.send(data)
   })
 })
 
 //create student info
-router.post('/create', function(req, res) {
+router.post('/', function(req, res) {
 	console.log(req.body);
-	let createMentor = {
+	let createData = {
 		userId: req.body.userId,
-	    field: req.body.field,
-	    experience: req.body.experience
+	    description: req.body.description,
+	    experience: req.body.experience,
 	}
-	Mentor.create(createMentor, function(err) {
+	Student.create(createData, function(err) {
 		if(err) {
 			console.log(err);
 		}

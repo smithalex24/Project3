@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema; 
+
 
 var mentorSchema = new mongoose.Schema({
 	userId: {
@@ -6,14 +8,13 @@ var mentorSchema = new mongoose.Schema({
 		reference: 'User',
 		required: true
 	},
-	field: [{
-		category: String,
-		subcategory: String
-	}],
-	experience: String
+	field: Array,
+	experience: String 
+
 });
 
 var Mentor = mongoose.model('Mentor', mentorSchema);
+  
+module.exports = Mentor;
 
-module.exports = Mentor
 

@@ -3,7 +3,12 @@ import React, { Component } from 'react';
 class Home extends Component {
 	render() {
 		return (
-			<p>This is a home page. You should probably write something here.</p>
+			<div>
+				<p className = "hometext">Looking for a mentor?</p> 
+				<p className = "hometext">Looking to mentor?</p> 
+				<p className = "hometext">Sign up and find connections in your area!</p>
+				<img src="../meeting.jpg" className="App-logo" alt="logo" />
+			</div>
 	
 	
 		);
