@@ -15,7 +15,7 @@ class Profile extends Component {
 
 	componentDidMount () {
 		if (this.props.user.mentor === true) {
-			axios.get('/mentor' + this.props.user.id)
+			axios.get('http://localhost:3001/mentor/' + this.props.user.id)
 			.then(results => {
 				this.setState ({
 					field: results.data.field,
@@ -27,7 +27,7 @@ class Profile extends Component {
 		}
 
 		else if (this.props.user.mentor === false) {
-			axios.get('/student' + this.props.user.id)
+			axios.get('http://localhost:3001/student/' + this.props.user.id)
 			.then(results => {
 				this.setState ({
 					field: results.data.field,
