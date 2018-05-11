@@ -1,32 +1,35 @@
-// import React, { Component } from 'react';
-// import axios from 'axios';
 
-// class Search extends Component {
-// 	constructor(props) {
-// 		super(props)
-// 		this.state = {
-// 			zipcode: ''
-// 		};
-// 	}
+import React, { Component } from 'react';
+import axios from 'axios';
 
-// 	handleZipChange = (e) => {
-// 			this.setState({ zipcode: e.target.value });
-// 		}
+class Search extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			zipcode: ''
+		};
+	}
 
-// 	handleSearch = (e) => {
-// 		e.preventDefault();
-// 		console.log("Zip was submitted!", this.state);
-// 		axios.get('/getusersnearby', {zip: 98101})
-// 		.then(res => {
-// 			const results = res.data;
-// 			console.log('results from axios call', res.data);
-// 		})
-// 		.catch(err => {
-// 			console.log('ERROR', err);
-// 		});
-// 	}
+handleZipChange = (e) => {
+		this.setState({ zipcode: e.target.value });
+	}
 
-// 	render() {
+handleSearch = (e) => {
+	e.preventDefault();
+	console.log("Zip was submitted!", this.state);
+	axios.post('/getusersnearby', {zipcode: this.state.zipcode})
+	.then(res => {
+		const results = res.data;
+		console.log('results from axios call', res.data);
+	})
+	.catch(err => {
+		console.log('ERROR', err);
+	});
+}
+
+
+	render() {
+
 	
 // 		return (
 // 			<div>
