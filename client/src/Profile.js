@@ -15,9 +15,10 @@ class Profile extends Component {
 		}
 	};
 
-	componentDidMount () {
-		if (this.props.user.mentor === true) {
-			axios.get('http://localhost:3001/mentor/' + this.props.user.id)
+componentDidMount () {
+if (this.props.user) {
+  if (this.props.user.mentor) {
+  axios.get('http://localhost:3001/mentor/' + this.props.user._id)
 			.then(results => {
 				this.setState ({
 					field: results.data.field,
@@ -27,9 +28,10 @@ class Profile extends Component {
 				console.log('ERROR', err);
 			});
 		}
+  
 
-		else if (this.props.user.mentor === false) {
-			axios.get('http://localhost:3001/student/' + this.props.user.id)
+  else {
+	axios.get('http://localhost:3001/student/' + this.props.user.id)
 			.then(results => {
 				this.setState ({
 					field: results.data.field,
@@ -38,8 +40,36 @@ class Profile extends Component {
 			}).catch(err => {
 				console.log('ERROR', err);
 			});
-		}
-	}
+  	}
+  }
+}
+
+
+	// componentDidMount () {
+	// 	if (this.props.user && this.props.user.mentor) {
+	// 		axios.get('http://localhost:3001/mentor/' + this.props.user._id)
+	// 		.then(results => {
+	// 			this.setState ({
+	// 				field: results.data.field,
+	// 				experience: results.data.experience
+	// 			})
+	// 		}).catch(err => {
+	// 			console.log('ERROR', err);
+	// 		});
+	// 	}
+
+	// 	else if (!this.props.user || !this.props.user.mentor) {
+	// 		axios.get('http://localhost:3001/student/' + this.props.user.id)
+	// 		.then(results => {
+	// 			this.setState ({
+	// 				field: results.data.field,
+	// 				experience: results.data.experience
+	// 			})
+	// 		}).catch(err => {
+	// 			console.log('ERROR', err);
+	// 		});
+	// 	}
+	// }
 	
 	render() {
 		if(this.props.user && this.props.user.mentor){
