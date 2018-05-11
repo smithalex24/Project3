@@ -3,14 +3,17 @@ import StudentForm from './StudentForm';
 import MentorForm from './MentorForm';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+
+import { Link } from 'react-router-dom';
+
 
 
 class Profile extends Component {
+
 	constructor(props){
 		super(props);
 		this.state = {
-			field: '',
+			field: [],
 			experience: ''
 		}
 	};
@@ -40,9 +43,36 @@ if (this.props.user) {
 			}).catch(err => {
 				console.log('ERROR', err);
 			});
+
+		}
+	}
+//passing formsubmit as props in mentorform
+	formSubmit = (e) => {
+		e.preventDefault();
+		console.log("Mentor form created!", this.state);
+		console.log('user is', this.props.user);
+		axios.post('http://localhost:3001/mentor', {
+			userId: this.props.user.id, 
+			// field: ['something here'],
+			field: this.props.field,
+			experience: this.props.experience
+		})
+		.then(result => {
+			this.setState({ 
+				field: result.data.field 
+			});
+			console.log(result)
+			console.log('Yay, it worked!', result);
+		})
+		.catch(err => {
+			console.log('ERROR', err);
+		});
+	}
+
   	}
   }
 }
+
 
 
 
@@ -53,7 +83,12 @@ if (this.props.user) {
 				<div>
 					<h1>Hello again, {this.props.user.name}!</h1>
 					<h3>Your email is {this.props.user.email}</h3>
+
+					<MentorForm user={this.props.user} formSubmit={this.formSubmit} />
+					<p>{this.state.field}</p>
+
 					<MentorForm user={this.props.user}/>
+
 				</div>
 			);
 		}

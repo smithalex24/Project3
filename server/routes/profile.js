@@ -6,11 +6,11 @@ var User = require('../models/user');
 var bcrypt = require('bcrypt');
 var expressJWT = require('express-jwt');
 var jwt = require('jsonwebtoken');
-var db = require ('../models/student')
+var Student = require ('../models/student')
 
 //set up student profile route
 router.get('/', function(req, res) {
-	db.Student.find({'userId': req.user.id}, function(err, Student) {
+	Student.find({'userId': req.user.id}, function(err, Student) {
 		if(err) {
 			console.log(err);
 		}
@@ -22,7 +22,7 @@ router.get('/', function(req, res) {
 
 //find specific user id
 router.get('/:id', (req, res) => {
-  db.Student.findOne({_id:req.params.id}).then(data =>{
+  Student.findOne({_id:req.params.id}).then(data =>{
     res.send(data)
   })
 })

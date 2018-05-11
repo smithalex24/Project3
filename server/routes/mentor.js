@@ -20,14 +20,14 @@ router.post('/', function(req, res) {
 	console.log(req.body);
 	let createMentor = {
 		userId: req.body.userId,
-	    field: [{ category: 'category here'}],
+	    field: req.body.field,
 	    experience: req.body.experience
 	}
-	Mentor.create(createMentor, function(err) {
+	Mentor.create(createMentor, function(err, mentor) {
 		if(err) {
 			console.log(err);
 		}
-		res.send('success!');
+		res.send(mentor);
 	});
 });
 
