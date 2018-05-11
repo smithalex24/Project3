@@ -95,6 +95,7 @@ class Signup extends Component {
 							<label htmlFor="Student">Student</label>
 						</div>
 					</div>
+					<br />
 
 					<input type = "submit" value = "Sign Me Up!" className = "button" />
 				</form>

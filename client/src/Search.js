@@ -45,9 +45,7 @@ handleSearch = (e) => {
 				return (
 					<div key={person.id}>
 						<p>Mentor: {person.name}</p>
-						<br />
 						<p>Contact: {person.email}</p>
-						<br />
 						<p>Location: {person.zipcode}</p>
 						<div>
 							<input type = "submit" value = "Connect" className = "button" />

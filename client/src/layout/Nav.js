@@ -32,7 +32,7 @@ class Nav extends Component {
 		);
 	}
 		return (
-			<div>
+			<div className = "navbar">
 				<nav className = "nav">
 					<Link to = "/">Home</Link>
 					{links}
