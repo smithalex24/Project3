@@ -9,8 +9,8 @@ class Signup extends Component {
 			name: '',
 			email: '',
 			password: '',
+			zipcode: '',
 			mentor: ''
-			zipcode: ''
 		};
 	}
 
@@ -28,7 +28,7 @@ class Signup extends Component {
 
 	handleZipCodeChange = (e) => {
 		this.setState({ zipcode: e.target.value });
-  }
+  	}
 
 	handleMentorChange = (event) => {
 		if (event.currentTarget.value === 'true'){
@@ -79,6 +79,10 @@ class Signup extends Component {
 					<div>
 						<input name = "Password" placeholder = "Type a password" type = "password" value = {this.state.password} onChange = {this.handlePasswordChange} />
 					</div>
+					<div>
+						<input name = "ZipCode" placeholder = "What's your zipcode?" value = {this.state.zipcode}
+							onChange = {this.handleZipCodeChange} />
+					</div>
 					<div className="radio-row">
 						<div className="input-row">
 							<input id="Mentor" name = "Mentor" type= "radio" value = 'true' checked={this.state.mentor === true ? 'checked' : null}
@@ -90,10 +94,6 @@ class Signup extends Component {
 							onChange = {this.handleMentorChange}/>
 							<label htmlFor="Student">Student</label>
 						</div>
-					</div>
-					<div>
-						<input name = "ZipCode" placeholder = "What's your zipcode?" value = {this.state.zipcode}
-							onChange = {this.handleZipCodeChange} />
 					</div>
 
 					<input type = "submit" value = "Sign Me Up!" className = "button" />
