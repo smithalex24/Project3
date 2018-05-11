@@ -27,18 +27,10 @@ handleSearch = (e) => {
 	.then(res => {
 		const results = res.data;
 		console.log('this is res data: ', res.data)
-		console.log('if i grabbed user 0: ', res.data[0].name )
 		this.setState({
-			// results : [{
-				name : res.data.name,
-				email: res.data.email
-		
+			results : res.data
 		})
-		console.log('here is the state at the end of the call: ', this.state)
-		console.log('res data name:', this.state.name)
-		console.log('res data results:', this.state.results)
-		console.log('res data email:', this.state.email)
-		console.log('this is the state after call:', this.state);
+
 		console.log('results from axios call', res.data);
 	})
 	.catch(err => {
@@ -48,7 +40,22 @@ handleSearch = (e) => {
 
 
 	render() {
-	
+		const results = this.state.results.map(person => {
+			if(person && person.name){
+				return (
+					<div key={person.id}>
+						<p>Mentor: {person.name}</p>
+						<p>Contact: {person.email}</p>
+						<p>Location: {person.zipcode}</p>
+						<div>
+							<input type = "submit" value = "Connect" className = "button" />
+						</div>
+						<hr />
+					</div>
+				);
+			}
+		});
+
 		return (
 			<div>
 				<form onSubmit = {this.handleSearch}>
@@ -57,6 +64,10 @@ handleSearch = (e) => {
 					</div>
 					<input type = "submit" value = "Search!" className = "button" />
 				</form>
+				<hr />
+				<div>
+					{results}
+				</div>
 			</div>
 	
 	

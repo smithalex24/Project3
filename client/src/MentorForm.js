@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Select from 'react-select';
-import 'react-select/dist/react-select.css'
+import 'react-select/dist/react-select.css';
+
 
 
 class MentorForm extends Component {
@@ -51,7 +52,6 @@ class MentorForm extends Component {
 					</div>
 					<input type = "submit" value = "Submit" className = "button" />
 				</form>
-				<Search />
 			</div>
 
 	

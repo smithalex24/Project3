@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import StudentForm from './StudentForm';
 import MentorForm from './MentorForm';
 import { Redirect } from 'react-router-dom';
-import Search from './Search.js';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 
 class Profile extends Component {
@@ -48,7 +48,6 @@ class Profile extends Component {
 					<h1>Hello again, {this.props.user.name}!</h1>
 					<h3>Your email is {this.props.user.email}</h3>
 					<MentorForm user={this.props.user}/>
-					<Search />
 				</div>
 			);
 		}
