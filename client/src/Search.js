@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -41,10 +40,6 @@ handleSearch = (e) => {
 
 
 	render() {
-
-
-	
-
 		const results = this.state.results.map(person => {
 			if(person && person.name){
 				return (
@@ -60,7 +55,6 @@ handleSearch = (e) => {
 				);
 			}
 		});
-
 
 		return (
 			<div>
@@ -84,4 +78,3 @@ handleSearch = (e) => {
 }
 
 export default Search;
-
