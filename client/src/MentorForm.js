@@ -9,22 +9,27 @@ class MentorForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			field: '',
+			field: [],
 			experience: ''
 		};
+		this.fieldChange = this.fieldChange.bind(this)
+		this.experienceChange = this.experienceChange.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
+
 	}
 	
 	fieldChange = (field) => {
-		this.setState({ field });
+		console.log(field)
+		this.setState({ field })
 	}
 	
 	experienceChange = (e) => {
-		this.setState({ experience: e.target.value });
+		this.setState({ experience: e.target.value })
 	}
 
 	handleSubmit = (e) => {
-		e.preventDefault();
-		console.log("Mentor form created!", this.state);
+		e.preventDefault()
+		console.log("Mentor form created!", this.state)
 		console.log('user is', this.props.user);
 		axios.post('http://localhost:3001/mentor', {
 			userId: this.props.user.id, 
@@ -32,23 +37,30 @@ class MentorForm extends Component {
 			experience: this.state.experience
 		})
 		.then(result => {
-			console.log('Yay, it worked!', result);
+			console.log('Yay, it worked!', result)
 		})
 		.catch(err => {
-			console.log('ERROR', err);
+			console.log('ERROR', err)
 		});
 	}
 
 
 	render() {
-		const { field } = this.state;
+		const { field } = this.state
+		const value = field && field.value
+		console.log("this is the field...")
+		console.log(field)
+		console.log("this is the field value...")
+		console.log(field.value)
+		console.log("this is the field value...")
+		console.log(field.value)
 		
 		return (
 			<div>
 				<form onSubmit = {this.handleSubmit}>	
-					<Select.Creatable removeSelected = {false} displayValue= "Art" multi={true} name="form-field-name" value={field} onChange={this.fieldChange} options={ [{value: 'Photograhy', label: 'Photography'}, {value: 'Animation', label: 'Animation'}] } />
+					<Select.Creatable removeSelected = {false} displayValue= "Art" multi={true} name="form-field-name" value={field.label} onChange={this.fieldChange} options={ [{value: 'Photograhy', label: 'Photography'}, {value: 'Animation', label: 'Animation'}] } />
 					<div>
-						<input name = "Experience" placeholder= "Enter short bio here" value = {this.state.experience} onChange = {this.ExperienceChange} />
+						<input name = "Experience" placeholder= "Enter short bio here" value = {this.state.experience} onChange = {(e) => this.experienceChange(e)} />
 					</div>
 					<input type = "submit" value = "Submit" className = "button" />
 				</form>

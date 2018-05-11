@@ -68,7 +68,7 @@ class Signup extends Component {
 		}
 		return (
 			<div>
-				<h2>Sign Up as a new user</h2>
+				<h2 className = "signupheader">Sign up as a new user</h2>
 				<form onSubmit = {this.handleSubmit}>
 					<div>
 						<input name = "Name" placeholder = "What is your name?" value = {this.state.name} onChange = {this.handleNameChange} />

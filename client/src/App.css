@@ -45,7 +45,7 @@ nav a:hover {
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2em;
   font-family: 'Abril Fatface';
 }
 
@@ -58,5 +58,41 @@ nav a:hover {
   font-size: 25px;
   font-weight: bold;
 }
+.loginheader {
+  font-family: 'Abril Fatface';
+  font-weight: bold;
+}
+.resultkey {
+  font-family: 'Abril Fatface';
+  font-weight: bold;
+  font-size: 15px;
+
+
+}
+.searchHeader {
+  font-family: 'Abril Fatface';
+  font-size: 40px;
+  font-weight: bold;
+
+}
+.searchmentor {
+  font-family: 'Abril Fatface';
+  font-weight: bold;
+  font-size: 20px;
+
+}
+.button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-family: 'Abril Fatface';
+  font-size: 20px;
+  font-weight: bold;
+}
+.signupheader {
+  font-family: 'Abril Fatface';
+  font-weight: bold;
+
+}
+
 
 

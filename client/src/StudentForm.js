@@ -44,7 +44,6 @@ class StudentForm extends Component {
 					</div>
 					<input type = "submit" value = "Submit" className = "button" />
 				</form>
-				<Search />
 			</div>
 	
 	
