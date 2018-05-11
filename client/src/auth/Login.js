@@ -42,7 +42,7 @@ class Login extends Component {
 		}
 		return (
 			<div>
-				<h2>Login as an existing user</h2>
+				<h2 className = "loginheader">Login as an existing user</h2>
 				<form onSubmit = {this.handleSubmit}>
 					<div>
 						<input name = "Email" placeholder = "What is your email?" value = {this.state.email} onChange = {this.handleEmailChange} />
