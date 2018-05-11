@@ -43,9 +43,4 @@ var ZIP_API_KEY = process.env.ZIP_API_KEY;
 
 });
 
-
-
-
-
-
 module.exports = router;
