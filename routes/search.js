@@ -26,12 +26,13 @@ var ZIP_API_KEY = process.env.ZIP_API_KEY;
 		console.log('request was made');
 		let zipResults = JSON.parse(body);
 		userDB.find({zipcode: {$in:zipResults.zip_codes}}).then(function(match) {
+			console.log('this is MATCH:', match);
 			res.send(match);
 		})
 		console.log('finding users');
 		console.log('err', err)
-		console.log('body', body)
-		console.log(zipResults);
+		console.log('body after searching users is: ', body)
+		console.log('this is zipresults: ', zipResults);
 
 		//Once we get the list of zips from the API:
 		//Make a DB call to the user model to find all users who have a zip in the list

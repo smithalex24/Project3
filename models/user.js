@@ -39,6 +39,7 @@ userSchema.set('toJSON', {
       id: user._id,
       email: user.email,
       name: user.name,
+      zipcode: user.zipcode
 
     };
     return returnJson;
