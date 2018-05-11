@@ -22,10 +22,9 @@ handleZipChange = (e) => {
 
 handleSearch = (e) => {
 	e.preventDefault();
-	// console.log("Zip was submitted!", this.state);
-	axios.post('/getusersnearby', {zipcode: this.state.zipcode})
-	.then((res) => {
-		console.log('this is', res);
+	console.log("Zip was submitted!", this.state);
+	axios.post('http://localhost:3001/getusersnearby', {zipcode: this.state.zipcode})
+	.then(res => {
 		const results = res.data;
 		console.log('this is res data: ', res.data)
 		console.log('if i grabbed user 0: ', res.data[0].name )
