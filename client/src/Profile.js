@@ -64,6 +64,12 @@ class Profile extends Component {
 			console.log('ERROR', err);
 		});
 	}
+
+  }
+
+
+
+
 	
 	render() {
 		if(this.props.user && this.props.user.mentor){
@@ -73,11 +79,10 @@ class Profile extends Component {
 					<h3>Your email is {this.props.user.email}</h3>
 					<MentorForm user={this.props.user} formSubmit={this.formSubmit} />
 					<p>{this.state.field}</p>
+					<MentorForm user={this.props.user}/>
 				</div>
 			);
-		}
-
-		else if (this.props.user && !this.props.user.mentor) {
+		} else if (this.props.user && !this.props.user.mentor) {
 			return (
 				<div>
 					<h1>Hello again, {this.props.user.name}!</h1>
@@ -92,7 +97,9 @@ class Profile extends Component {
            		 );
 		}		
 	}
+
 }
+
 
 
 export default Profile;

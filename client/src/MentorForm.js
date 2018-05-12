@@ -32,12 +32,11 @@ render() {
 					</div>
 					<input type = "submit" value = "Submit" className = "button" />
 				</form>
-
 			</div>
 
 		);
-	}
+  }
 }
 
-export default MentorForm;
 
+export default MentorForm;
