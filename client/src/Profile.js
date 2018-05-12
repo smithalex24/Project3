@@ -46,6 +46,7 @@ if (this.props.user) {
 
 		}
 	}
+}
 //passing formsubmit as props in mentorform
 	formSubmit = (e) => {
 		e.preventDefault();
@@ -53,8 +54,8 @@ if (this.props.user) {
 		console.log('user is', this.props.user);
 		axios.post('http://localhost:3001/mentor', {
 			userId: this.props.user.id, 
-			// field: ['something here'],
-			field: this.props.field,
+			field: ['something here'],
+			// field: this.props.field,
 			experience: this.props.experience
 		})
 		.then(result => {
@@ -69,7 +70,7 @@ if (this.props.user) {
 		});
 	}
 
-  }
+  
 
 
 
@@ -82,7 +83,6 @@ if (this.props.user) {
 					<h3>Your email is {this.props.user.email}</h3>
 					<MentorForm user={this.props.user} formSubmit={this.formSubmit} />
 					<p>{this.state.field}</p>
-					<MentorForm user={this.props.user}/>
 				</div>
 			);
 		} else if (this.props.user && !this.props.user.mentor) {
