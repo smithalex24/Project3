@@ -27,6 +27,7 @@ if (this.props.user) {
 					field: results.data.field,
 					experience: results.data.experience
 				})
+				console.log(results)
 			}).catch(err => {
 				console.log('ERROR', err);
 			});
@@ -56,10 +57,7 @@ if (this.props.user) {
 					<h1>Hello again, {this.props.user.name}!</h1>
 					<h3>Your email is {this.props.user.email}</h3>
 					<MentorForm user={this.props.user}/>
-					<p>This is state field {this.state.field}</p>
-					<p>This is state experience{this.state.experience}</p>
-					<p>This is props field{this.props.user.field}</p>
-					<p>This is the props experience{this.props.user.experience}</p>
+					
 				</div>
 			);
 		} else if (this.props.user && !this.props.user.mentor) {
