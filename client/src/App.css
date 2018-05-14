@@ -3,13 +3,14 @@ html, body {
   width: 100% !important;
 }
 
-nav {
-  width: 200%;
+.nav-wrapper {
+  width: 100%;
   background-color: #49bbc1;
-/*  padding: 10px 0;
-*/  margin-left: -200px; 
-
+  margin: 0px 100px 0px -220px;
+  padding: 0 4vw;
 }
+
+
 nav a {
   margin: 20px;
   text-decoration: none;
@@ -128,6 +129,7 @@ label {
   height: 100vh;
   width: 100%;
   color: white;
+  padding: 0px 20px;
 }
 .collapsible-header {
   background-color: #222222;
