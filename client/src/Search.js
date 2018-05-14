@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -57,7 +56,6 @@ handleSearch = (e) => {
 			}
 		});
 
-
 		return (
 			<div>
 				<form onSubmit = {this.handleSearch}>
@@ -80,4 +78,3 @@ handleSearch = (e) => {
 }
 
 export default Search;
-
