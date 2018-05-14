@@ -1,15 +1,12 @@
-html, body {
+html {
   margin: 0 auto !important;
   width: 100% !important;
 }
 
-.nav-wrapper {
-  width: 100%;
+nav {
   background-color: #49bbc1;
-  margin: 0px 100px 0px -220px;
   padding: 0 4vw;
 }
-
 
 nav a {
   margin: 20px;
@@ -22,12 +19,14 @@ nav a {
 
 nav a:hover {
   color: black;
-  background-color: #333333;
-  max-height: 100%
+}
+.button a:hover {
+  color: 'yellow';
+  box-shadow: 15px;
 
 }
 .footer {
-  background-color: #555;
+  background-color: #49bbc1;
   width: 100%;
   height: 25px;
   position: fixed;
@@ -43,14 +42,29 @@ nav a:hover {
   text-align: center;
   margin: 0;
   width: 100%;
+  height: 100%;
 }
+.home {
+  background-image: url("../src/images/meeting.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  width: 100%!important;
+    
+}
+.home  {
+
+}
+
 .App-logo {
-  height: 80%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
 }
 
 .App-header {
   background-color: #222;
+  margin-top: 350px;
   height: 150px;
   padding: 20px;
   color: white;
@@ -60,6 +74,7 @@ nav a:hover {
 .App-title {
   font-size: 2em;
   font-family: 'Abel', sans-serif;
+  font-size: 50px;
 }
 
 .App-intro {
@@ -108,8 +123,6 @@ nav a:hover {
 }
 label {
    font-family: 'Open Sans Condensed', sans-serif;
-
-
 }
 .mentor-form {
   text-align: left;
@@ -151,4 +164,17 @@ label {
 .button, .input {
   color: white;
   background-color: #49bbc1;
+}
+.homeSignin {
+  margin-top: 400px;
+
+
+}
+.home-intro {
+  font-size: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  height: 200px;
+  text-align: center;
+  padding: 30px;
+
 }
