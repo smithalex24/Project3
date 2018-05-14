@@ -18,7 +18,8 @@ class MentorForm extends Component {
 		super(props);
 		this.state = {
 			field: [],
-			experience: ''
+			experience: '',
+			display: false
 		};
 	}
 	
@@ -57,7 +58,8 @@ class MentorForm extends Component {
 			console.log(result)
 			this.setState({ 
 				field: result.data.field,
-				experience: result.data.experience
+				experience: result.data.experience,
+				display: true
 			}, () => 
 				console.log(this.state)
 			);
@@ -70,43 +72,61 @@ class MentorForm extends Component {
 			console.log('ERROR', err);
 		});
 
-		
 	}
 
 render() {
 
- var medicineMap = medicine.map((item,index) =>
-     <div>
-       <li key={index} className='fieldList'>
-        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox' onChange={this.fieldChange} />
+var fieldMap = this.state.field.map((item,index) => 
+	<li>{ item }</li>
+)
+
+if (this.state.display === true) {
+	var newDisplay = ( 
+		<div>
+			<ul className='browser-default'>
+			<h4>Your fields:{fieldMap} </h4>
+			</ul>
+			<p>{this.state.experience}</p>
+		</div>
+		)
+	} else {
+		var newDisplay = (
+			<div></div>
+		)
+	}
+	
+var medicineMap = medicine.map((item,index) =>
+     <div className='list-container'>
+       <li key={index} className='fieldList col s12'>
+        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox input-check' onChange={this.fieldChange} />
        </li>
        <br />
       </div>)
- var artMap = arts.map((item,index) =>
-     <div>
-       <li key={index} className='fieldList'>
-        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox' onChange={this.fieldChange} />
+var artMap = arts.map((item,index) =>
+     <div className='list-container'>
+       <li key={index} className='fieldList col s12'>
+        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox input-check' onChange={this.fieldChange} />
        </li>
        <br />
       </div>)
 var lawMap = law.map((item,index) =>
-     <div>
-       <li key={index} className='fieldList'>
-        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox' onChange={this.fieldChange} />
+     <div className='list-container'>
+       <li key={index} className='fieldList col s12'>
+        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox input-check' onChange={this.fieldChange} />
        </li>
        <br />
       </div>)
 var techMap = tech.map((item,index) =>
-     <div>
-       <li key={index} className='fieldList'>
-        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox' onChange={this.fieldChange} />
+     <div className='list-container'>
+       <li key={index} className='fieldList col s12'>
+        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox input-check' onChange={this.fieldChange} />
        </li>
        <br />
       </div>)
 var educationMap = education.map((item,index) =>
-     <div>
-       <li key={index} className='fieldList'>
-        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox' onChange={this.fieldChange} />
+     <div className='list-container'>
+       <li key={index} className='fieldList col s12'>
+        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox input-check' onChange={this.fieldChange} />
        </li>
        <br />
       </div>)
@@ -114,9 +134,10 @@ var educationMap = education.map((item,index) =>
 
 
 		return (
-			<div>
+			<div className= "mentor-form row">
 				<form onSubmit = {this.formSubmit}>	
-					<div>
+					<div className="col s6">
+					<h4>Pick your Areas of Expertise</h4>
 						<Collapsible accordion name="Field" >
 						  <CollapsibleItem header='Medicine' icon='arrow_drop_down_circle'>
 						  	<ul>{medicineMap}</ul>
@@ -134,14 +155,17 @@ var educationMap = education.map((item,index) =>
 						   <ul><li>{educationMap}</li></ul>
 						  </CollapsibleItem>
 						</Collapsible>
-						<input name = "Experience" placeholder= "Enter short bio here" value = {this.state.experience} onChange = { this.experienceChange } />
+						<input className= "input" name = "Experience" placeholder= "Enter short bio here" value = {this.state.experience} onChange = { this.experienceChange } />
+					
+						<input type = "submit" value = "Submit" className = "button" />
 					</div>
-					<input type = "submit" value = "Submit" className = "button" />
 				</form>
-					<p>{this.state.field}</p>
-					<p>{this.state.experience}</p>
-					<p>{this.props.user.field}</p>
-					<p>{this.props.user.experience}</p>
+				<div className='new-display col s6'>
+					<h5>Hello again, {this.props.user.name}!</h5>
+					<h5>Your email is {this.props.user.email}</h5>
+					<h5>Your bio: {newDisplay}</h5>
+					
+				</div>
 			</div>
 
 		);

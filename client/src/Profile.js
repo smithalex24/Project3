@@ -54,10 +54,9 @@ if (this.props.user) {
 		if(this.props.user && this.props.user.mentor){
 			return (
 				<div>
-					<h1>Hello again, {this.props.user.name}!</h1>
-					<h3>Your email is {this.props.user.email}</h3>
-					<MentorForm user={this.props.user}/>
 					
+					<MentorForm user={this.props.user}/>
+					<hr />
 				</div>
 			);
 		} else if (this.props.user && !this.props.user.mentor) {
