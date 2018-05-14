@@ -12,7 +12,6 @@ const law = ['Attorney', 'Prosecutor', 'Public Defender', 'Private Practice']
 const tech = ['Web Developer', 'Data Scientist', 'UX Designer', 'Project Manager']
 const education = ['Teacher', 'Special Education Teacher']
 
-
 class MentorForm extends Component {
 	constructor(props) {
 		super(props);
@@ -23,6 +22,7 @@ class MentorForm extends Component {
 		};
 	}
 	
+  
 	fieldChange = (e) => {
 		const newField = this.state.field
 		let index
@@ -164,13 +164,13 @@ var educationMap = education.map((item,index) =>
 					<h5>Hello again, {this.props.user.name}!</h5>
 					<h5>Your email is {this.props.user.email}</h5>
 					<h5>Your bio: {newDisplay}</h5>
-					
-				</div>
-			</div>
-
-		);
+			</div>		
+		</div>
+    );
   }
 }
+
+
 
 
 export default MentorForm;
