@@ -26,6 +26,15 @@ router.get('/:id', (req, res) => {
     res.send(data)
   })
 })
+
+//find specific user id
+router.get('/:id', (req, res) => {
+    console.log('ypo', req.params.id)
+  User.findOne({_id:req.params.id}).then(data =>{
+      console.log('this is return',data)
+    res.send(data)
+  })
+})
 //delete functionality for savedmentors
 router.delete('/:id/:mentorId', (req, res) => {
     console.log(req.params.id)
@@ -38,7 +47,7 @@ router.post('/', function(req, res) {
 	let createData = {
 		userId: req.body.userId,
 	    description: req.body.description,
-	    experience: req.body.experience,
+	    experience: req.body.experience
 	}
 	Student.create(createData, function(err) {
 		if(err) {

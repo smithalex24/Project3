@@ -65,6 +65,7 @@ if (this.props.user) {
 					<h3>Your email is {this.props.user.email}</h3>
 					<StudentForm user={this.props.user}/>
 					<div className="findmentor"><Link to = "/search"> Find a Mentor</Link></div>
+					<div className="findmentor"><Link to = "/contact"> Saved Contacts</Link></div>
 				</div>
 			)
 		} else {

@@ -77,9 +77,11 @@ class App extends Component {
             <Route path = "/profile" component = {
               () => (<Profile user={this.state.user} />)
             } />
-            <Route path = "/search" component = { () => (<SearchMentor  />)
+            <Route path = "/search" component = { 
+              () => (<SearchMentor user={this.state.user} />)
             } />
-            <Route path = "/contact" component = { () => (<Contact user={this.state.user}  />)
+            <Route path = "/contact" component = { 
+              () => (<Contact user={this.state.user}  />)
             } />
           </div>
         </Router>

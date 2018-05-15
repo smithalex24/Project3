@@ -5,8 +5,7 @@ import 'react-select/dist/react-select.css';
 import Search from './Search';
 import { Collapsible, CollapsibleItem, Input } from 'react-materialize'
 
-const medicine =['Dentistry', 'Gyno', 'Pediatrics']
-
+const medicine =['Dentistry', 'Gynecologist', 'Pediatrics']
 const arts = ['Photography', 'Animation', 'Sculpture', 'Illustration', 'Theatre']
 const law = ['Attorney', 'Prosecutor', 'Public Defender', 'Private Practice']
 const tech = ['Web Developer', 'Data Scientist', 'UX Designer', 'Project Manager']
@@ -84,7 +83,7 @@ if (this.state.display === true) {
 	var newDisplay = ( 
 		<div>
 			<ul className='browser-default'>
-			<h4>Your fields:{fieldMap} </h4>
+			<h4 className="selectedfields"><span className="fields">Fields Selected: </span> {fieldMap} </h4>
 			</ul>
 			<p>{this.state.experience}</p>
 		</div>
@@ -163,7 +162,7 @@ var educationMap = education.map((item,index) =>
 				<div className='new-display col s6'>
 					<h5>Hello again, {this.props.user.name}!</h5>
 					<h5>Your email is {this.props.user.email}</h5>
-					<h5>Your bio: {newDisplay}</h5>
+					<h5>{newDisplay}</h5>
 					
 				</div>
 			</div>

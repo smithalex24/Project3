@@ -35,6 +35,7 @@ class Contact extends Component {
 
     render () {
         if(this.state.userData){
+            console.log('mentors', this.state.userData.savedMentors)
             var savedMentors = this.state.userData.savedMentors.map((people, i) => {
                 var key = i
                 console.log(people.Mentor)
@@ -58,6 +59,7 @@ class Contact extends Component {
             console.log(savedMentors)
         } else {
             var savedMentors = ""
+            console.log('userData was null')
         }
 
         return (

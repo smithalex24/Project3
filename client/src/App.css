@@ -191,12 +191,10 @@ label {
   color: #49bbc1;
   text-shadow:  2px 2px;
   -webkit-text-stroke: 1px black;
-
 }
 .mentor {
    text-shadow: 2px 2px;
   -webkit-text-stroke: 1px black;
-
 }
 .loginform, .studentform, .searchform {
   width: 50%;
@@ -216,13 +214,22 @@ h4 {
   font-family: 'Ubuntu', sans-serif;
   font-size: 30px;
   color: #49bbc1;
-
 }
 .findmentor a:hover {
   color: black;
 }
 .studentprofile {
   font-family: 'Ubuntu', sans-serif;
+}
+.selectedfields, .fields {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  margin-left: -20px;
+  text-align: left;
+  color: #49bbc1;
 
 }
-
+.fields  {
+  text-decoration: underline;
+  font-weight: bold;
+}
