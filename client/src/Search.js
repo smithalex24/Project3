@@ -63,7 +63,7 @@ render() {
                     <div className="searchform">
                         <input name = "Zipcode" placeholder = "What is your Zipcode?" value = {this.state.zipcode} onChange = {this.handleZipChange} />
                     </div>
-                    <button onClick = "search">Search Mentors</button>
+                    <button className="button" onClick = "search">Search Mentors</button>
                 </form>
                 <hr />
                 <div>

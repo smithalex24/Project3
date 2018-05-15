@@ -221,5 +221,8 @@ h4 {
 .findmentor a:hover {
   color: black;
 }
+.studentprofile {
+  font-family: 'Ubuntu', sans-serif;
 
+}
 

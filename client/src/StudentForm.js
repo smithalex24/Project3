@@ -35,15 +35,7 @@ class StudentForm extends Component {
 	render() {
 		return (
 			<div>
-				<form onSubmit = {this.handleSubmit}>
-					<div className="studentform">
-						<input name = "Experience" placeholder = "Write your relevant experience" value = {this.state.experience} onChange = {this.experienceChange} />
-					</div>
-					<div className="studentform">
-						<input name = "Description" value = {this.state.description} onChange = {this.descriptionChange} />
-					</div>
-					<input type = "submit" value = "Submit" className = "button" />
-				</form>
+				
 			</div>
 	
 	
