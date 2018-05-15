@@ -26,7 +26,12 @@ router.get('/:id', (req, res) => {
     res.send(data)
   })
 })
-
+//delete functionality for savedmentors
+router.delete('/:id/:mentorId', (req, res) => {
+    console.log(req.params.id)
+    console.log(req.params.mentorId)
+    User.findById
+})
 //create student info
 router.post('/', function(req, res) {
 	console.log(req.body);
@@ -41,6 +46,21 @@ router.post('/', function(req, res) {
 		}
 	})
  	res.send();
+});
+
+router.post('/:id', (req, res) => {
+    User.findByIdAndUpdate(
+        req.params.id,
+        {$push: {savedMentors: req.body}},
+        { 'new': true },
+        function (err, user) {
+            if(err) {
+                console.log('Error', err);
+            };
+            user.save();
+            res.send(user);
+        }
+    )
 });
 
 module.exports = router;

@@ -44,11 +44,11 @@ class Login extends Component {
 			<div>
 				<h2 className = "loginheader">Login as an existing user</h2>
 				<form onSubmit = {this.handleSubmit}>
-					<div>
+					<div className="loginform">
 						<input name = "Email" placeholder = "What is your email?" value = {this.state.email} onChange = {this.handleEmailChange} />
 					</div>
-					<div>
-						<input name = "Password" type = "password" value = {this.state.password} onChange = {this.handlePasswordChange} />
+					<div className="loginform">
+						<input name = "Password" placeholder= "What is your password" type = "password" value = {this.state.password} onChange = {this.handlePasswordChange} />
 					</div>
 					<input type = "submit" value = "Log Me In!!" className = "button" />
 				</form>

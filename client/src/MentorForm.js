@@ -136,8 +136,8 @@ var educationMap = education.map((item,index) =>
 		return (
 			<div className= "mentor-form row">
 				<form onSubmit = {this.formSubmit}>	
-					<div className="col s6">
 					<h4>Pick your Areas of Expertise</h4>
+					<div className="col s6">
 						<Collapsible accordion name="Field" >
 						  <CollapsibleItem header='Medicine' icon='arrow_drop_down_circle'>
 						  	<ul>{medicineMap}</ul>

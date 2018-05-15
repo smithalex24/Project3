@@ -8,11 +8,11 @@ var Schema = mongoose.Schema;
   		reference: 'User',
   		required: true
   	},
-    description: {
-      type: String,
-      required: true
-    },
-    experience: String
+  	description: {
+  		type: String,
+  		required: true
+  	},
+  	experience: String
   });
 
   var Student = mongoose.model('Student', studentSchema);

@@ -10,6 +10,7 @@ import Nav from './layout/Nav';
 import Profile from './Profile';
 import Signup from './auth/Signup';
 import SearchMentor from './SearchMentor';
+import Contact from './Contact';
 
 
 class App extends Component {
@@ -77,6 +78,8 @@ class App extends Component {
               () => (<Profile user={this.state.user} />)
             } />
             <Route path = "/search" component = { () => (<SearchMentor  />)
+            } />
+            <Route path = "/contact" component = { () => (<Contact user={this.state.user}  />)
             } />
           </div>
         </Router>
