@@ -6,17 +6,16 @@ class Home extends Component {
 	render() {
 		return (
 			<div className ="home">
-				<div className='homesignin'><Link to = "/signup" type = "submit" className="button homeSignin">Get Started</Link></div>
 				<header className="App-header">
           			<h1 className="App-title">Welcome to <span className="mentor">Mentor</span><span className="space">Space</span></h1>
         		</header>
         		<p className="home-intro">Are you a student and looking to find a mentor in an area of your interest? 
         			Sign up and find what mentors are available in your zipcode.<br></br>
         			<div className="homeintro2">
-        			If you're a professional looking to inpsire other people in your area of field, sign up as a mentor and connect with students who are 
-        			willing to learn!
+	        			If you're a professional looking to inpsire other people in your area of field, sign up as a mentor and connect with students who are 
+	        			willing to learn!
         			</div>
-        			</p>
+        		</p>
 			</div>
 	
 	

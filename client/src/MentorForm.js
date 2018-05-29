@@ -11,7 +11,7 @@ const law = ['Attorney', 'Prosecutor', 'Public Defender', 'Private Practice']
 const tech = ['Web Developer', 'Data Scientist', 'UX Designer', 'Project Manager']
 const education = ['Teacher', 'Special Education Teacher']
 
-class MentorForm extends Component {
+class MentorForm extends Component {	
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -75,60 +75,60 @@ class MentorForm extends Component {
 
 render() {
 
-var fieldMap = this.state.field.map((item,index) => 
-	<li>{ item }</li>
-)
+	var fieldMap = this.state.field.map((item,index) => 
+		<li>{ item }</li>
+	)
 
-if (this.state.display === true) {
-	var newDisplay = ( 
-		<div>
-			<ul className='browser-default'>
-			<h4 className="selectedfields"><span className="fields">Fields Selected: </span> {fieldMap} </h4>
-			</ul>
-			<p>{this.state.experience}</p>
-		</div>
-		)
-	} else {
-		var newDisplay = (
-			<div></div>
-		)
-	}
+	if (this.state.display === true) {
+		var newDisplay = ( 
+			<div>
+				<ul className='browser-default'>
+				<h4 className="selectedfields"><span className="fields">Fields Selected: </span> {fieldMap} </h4>
+				</ul>
+				<p>{this.state.experience}</p>
+			</div>
+			)
+		} else {
+			var newDisplay = (
+				<div></div>
+			)
+		}
 	
-var medicineMap = medicine.map((item,index) =>
-     <div className='list-container'>
-       <li key={index} className='fieldList col s12'>
-        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox input-check' onChange={this.fieldChange} />
-       </li>
-       <br />
-      </div>)
-var artMap = arts.map((item,index) =>
-     <div className='list-container'>
-       <li key={index} className='fieldList col s12'>
-        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox input-check' onChange={this.fieldChange} />
-       </li>
-       <br />
-      </div>)
-var lawMap = law.map((item,index) =>
-     <div className='list-container'>
-       <li key={index} className='fieldList col s12'>
-        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox input-check' onChange={this.fieldChange} />
-       </li>
-       <br />
-      </div>)
-var techMap = tech.map((item,index) =>
-     <div className='list-container'>
-       <li key={index} className='fieldList col s12'>
-        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox input-check' onChange={this.fieldChange} />
-       </li>
-       <br />
-      </div>)
-var educationMap = education.map((item,index) =>
-     <div className='list-container'>
-       <li key={index} className='fieldList col s12'>
-        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox input-check' onChange={this.fieldChange} />
-       </li>
-       <br />
-      </div>)
+	var medicineMap = medicine.map((item,index) =>
+	     <div className='list-container'>
+	       <li key={index} className='fieldList col s12'>
+	        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox input-check' onChange={this.fieldChange} />
+	       </li>
+	       <br />
+	      </div>)
+	var artMap = arts.map((item,index) =>
+	     <div className='list-container'>
+	       <li key={index} className='fieldList col s12'>
+	        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox input-check' onChange={this.fieldChange} />
+	       </li>
+	       <br />
+	      </div>)
+	var lawMap = law.map((item,index) =>
+	     <div className='list-container'>
+	       <li key={index} className='fieldList col s12'>
+	        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox input-check' onChange={this.fieldChange} />
+	       </li>
+	       <br />
+	      </div>)
+	var techMap = tech.map((item,index) =>
+	     <div className='list-container'>
+	       <li key={index} className='fieldList col s12'>
+	        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox input-check' onChange={this.fieldChange} />
+	       </li>
+	       <br />
+	      </div>)
+	var educationMap = education.map((item,index) =>
+	     <div className='list-container'>
+	       <li key={index} className='fieldList col s12'>
+	        <Input name='field' type='checkbox' value= {item} label= {item} className='filled-in style-checkbox input-check' onChange={this.fieldChange} />
+	       </li>
+	       <br />
+	      </div>)
 
 
 
@@ -170,11 +170,10 @@ var educationMap = education.map((item,index) =>
 
 		);
 					<h5>Your bio: {newDisplay}</h5>
-			</div>		
-		</div>
-    );
+		}
+    
   }
-}
+
 
 
 

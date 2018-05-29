@@ -11,6 +11,7 @@ class Nav extends Component {
 		this.props.updateUser();
 	}
 	render() {
+
 		let links = '';
 		if(this.props.user) {
 			links = (
@@ -25,6 +26,7 @@ class Nav extends Component {
 			links = (
 				<span className='right'>
 					<Link to = "/login">Log In</Link>
+					<Link to ="/signup" className="button home-btn">Get Started</Link>
 				</span>
 
 		);

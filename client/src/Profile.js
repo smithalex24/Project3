@@ -43,7 +43,7 @@ class Profile extends Component {
 			});
 		}
 	}
-}
+
 //passing formsubmit as props in mentorform
 
 

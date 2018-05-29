@@ -47,7 +47,6 @@ saveContacts = (e) => {
 
 }
 
-<<<<<<< HEAD
 render() {
         const results = this.state.results.map(person => {
             if(person && person.name){
@@ -83,7 +82,7 @@ render() {
     
     
         );
-=======
+    }
 	render() {
 		const results = this.state.results.map(person => {
 			if(person && person.name){
@@ -117,10 +116,8 @@ render() {
 	
 	
 		);
->>>>>>> 7b48449fce21585655465ffaad7185c4c79a177e
-
 
     }
-}
+}	
 
 export default Search;
