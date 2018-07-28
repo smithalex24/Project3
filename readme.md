@@ -2,7 +2,7 @@
 
 MentorSpace is a full MERN stack application that allows students to connect with mentors in their zip code and field of interest. Our idea was inspired by our passion for encouraging students to learn outside of the traditional classroom environment and encourage professionals to talk about valuable skills required in work environments to students who want to learn. 
 
-https://mentrme-client.herokuapp.com/
+### [**Click to See the App! **](https://mentrme-client.herokuapp.com/)<br>
 
 ## Technologies Used
 
